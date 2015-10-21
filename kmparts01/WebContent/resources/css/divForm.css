@@ -1,0 +1,12 @@
+@CHARSET "UTF-8";
+
+.recordDiv{
+	border: solid 1px #CCCC99;
+	border-collapse: collapse;
+}
+
+.recordFieldSpan {
+	border: solid 1px #CCCC99;
+	border-collapse: collapse;
+	width: 120px;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:composite="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<title>Not present in rendered output</title>
+</head>
+<body>
+	<composite:interface>
+		<composite:attribute name="targetList" type="java.util.ArrayList" />
+	</composite:interface>
+
+	<composite:implementation>
+		<h:dataTable var="record" value="#{cc.attrs.targetList}" border="1" rendered="">
+			<h:column><h:outputText value="#{record.countryCode}" /></h:column>
+			<h:column><h:inputText value="#{record.countryNameEn}" readonly="#{record.isTarget}"/></h:column>
+			<h:column><h:inputText value="#{record.countryNameAbbrEn}"  readonly="#{record.isTarget}"/></h:column>
+			<h:column><h:inputText value="#{record.countryNameJp}"  readonly="#{record.isTarget}"/></h:column>
+			<h:column><h:inputText value="#{record.countryNameAbbrJp}"  readonly="#{record.isTarget}"/></h:column>
+		</h:dataTable>
+
+	</composite:implementation>
+</body>
+</html>
+<!-- 
+	private boolean isTarget;
+	private String countryCode;
+	private String countryNameEn;
+	private String countryNameAbbrEn;
+	private String countryNameJp;
+	private String countryNameAbbrJp;
+
+ -->
